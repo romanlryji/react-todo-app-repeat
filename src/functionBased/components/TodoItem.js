@@ -62,7 +62,7 @@ function TodoItem(props) {
       style={editMode}
       value={title}
       onChange={e => {
-        { props.setUpdate(e.target.value, id) }
+        props.setUpdate(e.target.value, id)
       }}
       onKeyDown={handleUpdatedDone}
     />
