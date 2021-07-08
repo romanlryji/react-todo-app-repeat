@@ -1,18 +1,25 @@
 import React, { Component, useState } from "react"
 
 function InputTodo(props) {
-  const [title, setTitle] = useState("")
+  const [inputText, setInputText] = useState({
+    title: ""
+  })
 
   function onChange(e) {
-    setTitle(e.target.value)
+    setInputText({
+      ...inputText,
+      [e.target.name]: e.target.value
+    })
     // console.log("hello")
   }
 
   function handleSubmit(e) {
     e.preventDefault()
-    if (title.trim()) {
-      props.addTodoProps(title)
-      setTitle("")
+    if (inputText.title.trim()) {
+      props.addTodoProps(inputText.title)
+      setInputText({
+        title: ""
+      })
     } else {
       alert("Title is empty")
     }
@@ -24,7 +31,7 @@ function InputTodo(props) {
         type="text"
         className="input-text"
         placeholder="Add Todo..."
-        value={title}
+        value={inputText.title}
         name="title"
         onChange={onChange}
       />

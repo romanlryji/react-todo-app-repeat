@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styles from "./TodoItem.module.css"
 
 function TodoItem(props) {
@@ -33,6 +33,12 @@ function TodoItem(props) {
   } else {
     editMode.display = "none"
   }
+
+  useEffect(() => {
+    return () => {
+      console.log("Cleaning up...")
+    }
+  }, [])
 
   return <li className={styles.item}>
     <div onDoubleClick={handleEditing} style={viewMode}>
