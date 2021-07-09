@@ -62,7 +62,7 @@ function TodoContainer() {
     const temp = localStorage.getItem("todos")
     const loadedTodos = JSON.parse(temp)
 
-    return loadedTodos || {}
+    return loadedTodos || []
   }
 
   useEffect(() => {
