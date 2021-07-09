@@ -2,7 +2,6 @@ import React from "react"
 import TodoItem from "./TodoItem"
 
 function TodosList(props) {
-  console.log("TodosList", props.todos)
   return (
     <ul>
       {props.todos.map(todo => (

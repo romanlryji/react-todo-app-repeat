@@ -62,11 +62,7 @@ function TodoContainer() {
     const temp = localStorage.getItem("todos")
     const loadedTodos = JSON.parse(temp)
 
-    const retval = loadedTodos || []
-
-    console.log("gettingInitialTodos", temp, loadedTodos, retval)
-
-    return retval
+    return loadedTodos || []
   }
 
   useEffect(() => {
